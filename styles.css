@@ -1,0 +1,475 @@
+:root {
+    --shadow: #eae2b7; 
+    --maincolor:  #fcbf49 ;
+    --background: #003049;
+    --textcolor: #fff;
+    --focuscolor: #f77f00;
+    --hovercolor:#ffb703;
+    --darkcolor:#d62828;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Sofia", sans-serif;
+    color: var(--textcolor);
+}
+
+
+#success-msg{
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  width: 300px;
+  background-color: #4BB543;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  transform: translateX(-50%);
+}
+
+#map {
+  height: 500px;
+  width: 100%; /* sets the width to the full width of the parent container */
+  position: relative; /* sets the position property to relative */
+  margin-bottom: 0px; /* adds a margin to the bottom of the div */
+  border: 1px solid black; /* adds a border to the div */
+  box-sizing: border-box; /* includes the border in the total height of the div */
+}
+#flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 500px - 0px); /* sets the height to the remaining space */
+  background-color: #f1f1f1; /* sets a background color */
+}
+
+.flex-item {
+  flex-basis: 100%;
+  height: 100%;
+  background-color: #003049;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+.popBtn{
+  background-color: #ffb703;
+  color: #003049;
+  border: none;
+  padding: 5px;
+}
+.popBtn:hover{
+  background-color: #4BB543;
+  color: aliceblue;
+}
+
+.dltBtn{
+  background-color: #d62828;
+  color: #fff;
+  border: none;
+  padding: 5px;
+}
+.dltBtn:hover{
+  background-color: gainsboro;
+  color: #003049;
+}
+
+#adminLogin{
+    width: 300PX;
+    padding: 10px;
+    font-size: 15px;
+}
+#loginButton:hover{
+    background-color: var(--hovercolor);
+}
+
+.admin_login{
+    border: 2px solid black;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: auto ;
+    margin-top: 150px;
+    text-align: center;
+    /* box-shadow: 0px 10px 30px 1px rgba(0, 0, 255, .2) ; */
+    box-shadow: inset 1em 0em var(--background);
+    border: none;
+    background-color: #003049;
+}
+input[type="password"], input[type="text"]{
+    margin: 3px 0  ;
+    width: 100%;
+    box-sizing: border-box;
+    /* border: var(--shadow); */
+    /* box-shadow: 1px 2px 10px 2px rgba(0, 0, 255, .2) ;  */
+    padding: 10px;
+}
+input[type="submit"], input[type="button"]{
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: var(--maincolor);
+    color: var(--textcolor);
+    border: none;
+    cursor: pointer;
+}
+
+#adminLogin{
+    width: 300PX;
+    padding: 10px;
+    font-size: 15px;
+}
+#adminLogin:hover{
+    background-color: var(--hovercolor);
+}
+
+
+
+/* Styles for the welcome message */
+#welcome-msg {
+  margin-bottom: 5px;
+  color: #003049;
+  font-weight: bold;
+  margin-right: 10px;
+}
+#add-marker-msg {
+  margin-bottom: 5px;
+  background-color: none;
+  color: #003049;
+  font-weight: bold;
+}
+
+#logout-btn {
+  background-color: #f77f00;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+#logout-btn:hover{
+  background-color: #d62828;
+}
+#nav-box > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#nav-box > div > #logo{
+  background-color: #003049;
+  padding: 0 20px;
+}
+
+.add-marker-form{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  margin-top: 2px;
+}
+
+#flex-item-mid{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+select{
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  font-size: 14px;
+  color: #474747;
+  height: 30px;
+  text-align: left
+}
+option{
+  font-size: 1rem;
+}
+option:hover{
+                box-shadow: 0 0 10px 100px #FED20F inset;
+                transition: all .2s ease-in-out;
+            }
+
+textarea{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+label {
+  margin-bottom: 10px;
+  color: black;
+  /* background-color: red; */
+}
+
+input[type="submit"] {
+  background-color: #ffb703;
+  color: #003049;
+  padding: 10px 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #fcbf49;
+  color: #003049;
+}
+
+/* Add styles to the button */
+button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 17px;
+  padding: 6px 12px;
+  margin-top: 7px;
+  margin-right: 5px;
+  height: 42px;
+}
+
+/* Add hover effect to the button */
+button:hover {
+  background-color: #f1f1f1;
+}
+
+#marker_info label {
+
+    width: 20px;
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  #marker_info input {
+    margin: 2px 0  ;
+    width: 100%;
+    box-sizing: border-box;
+  
+    padding: 10px;
+  }
+
+  
+
+/* input[type=search]{
+width: 300px;
+height: 40px;
+font-size: 16px;
+padding: 0px 20px 0px 40px;
+border-radius: 0px;
+outline: none;
+border: solid gray 2px;
+} */
+
+
+
+
+input[type="search"]{
+    position: absolute;
+    top: 0;
+    left: 250px;
+    width: 50px;
+    height: 42px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: block;
+    font-size: 1em;
+    padding: 0 20px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+/* .form:hover,
+.form:valid{
+    width: 200px;
+    cursor: pointer;
+} */
+
+/* .form:hover input,
+.form:valid input{
+    display: block;
+} */
+
+.form:hover .fa,
+.form:valid .fa{
+    background: #FED20F;
+    color: #07051a;
+}
+
+#search-bar {
+  margin-top: 15.5px;
+  position: fixed;
+  top: 5px;
+  left: 16.2%;
+  float: right;
+  margin-right: 10px;
+  z-index: 0;
+  padding: 10px;
+}
+
+#nav-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+  .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .search-btn:hover{
+    background: none;
+  }
+  
+  #locationSelect{
+    float: left;
+    margin-right: 10px;
+    position: fixed;
+    top: 8.8px;
+    left: 23%; 
+    width: 100px;
+    height: 43px;
+    background-color: white;
+    padding: 10px;
+     z-index: 1;
+    /* transform: translateX(-460%);  */
+  }
+
+
+   .fa-sign-out {
+        font-size: 23PX; 
+        color: #f1f1f1;/* Change the value as per your requirement */
+    }
+
+
+#nav-box {
+  position: fixed;
+  top: 6px;
+  left: 99%;
+  width: 30px;
+  padding: 0px;
+  transform: translateX(-2070%);
+}
+
+#nav-box .logout-popup {
+  position: absolute;
+  transform: translateX(-5%);
+  width: 120px;
+  z-index: 1;
+  display: none;
+}
+#nav-box:hover .logout-popup {
+  display: block;
+}
+
+#nav-box img {
+  width: 150%;
+  height: 150%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* CSS */
+.lg-btn {
+  display: inline-flex;
+  padding: 10px 40px 10px 10px;
+  background-color: #003049;
+  color: #f1f1f1;
+  border: none;
+  text-decoration: none;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.lg-btn:hover {
+  background-color: #474747;
+  color: #07051a;
+}
+
+.lg-btn a {
+  display: inline-flex;
+  align-items: left;
+  justify-content: left;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.lg-btn a i {
+  margin-right: 10px;
+  margin-top: 5px;
+  display: inline;
+}
+#nav-bx {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  transform: translateX(-50%);
+}
+
+.pac-card {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 0 0.5em;
+  font: 400 18px Roboto, Arial, sans-serif;
+  overflow: hidden;
+  font-family: Roboto;
+  padding: 0;
+}
+
+#pac-container {
+  padding-bottom: 12px;
+  margin-right: 12px;
+}
+
+.pac-controls {
+  display: inline-block;
+  padding: 5px 11px;
+}
+
+.pac-controls label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 8px;
+  margin-top: 9px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 250px;
+}
+
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
