@@ -32,6 +32,10 @@ if ($marker_type === 'fire') {
   $marker_info = "Tel / Mobile no: " . $_POST['tel'] . ", \nQuantity: " . $_POST['qty'] . " pc";
 
 }
+else if ($marker_type === 'water'){
+  // For other marker types, set the marker_info field to an empty string
+  $marker_info = "Tel / Mobile no: " . $_POST['tel'] . ", \nQuantity: " . $_POST['qty'] . " pc";
+} 
 
 // Insert data into markers table
 $sql = "INSERT INTO markers (latitude, longitude, marker_info, marker_type, status) VALUES ($latitude, $longitude, '$marker_info', '$marker_type', '$status')";

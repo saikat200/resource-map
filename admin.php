@@ -30,12 +30,81 @@ function initMap() {
       // Set default map center
       // Define the map and default marker icon
       map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 37.7739, lng: -122.4194},
-        zoom: 15
+        center: {lat: 23.780372082867956, lng: 90.40712748798454},
+        zoom: 17
       });
+      marker1 = new google.maps.Marker({
+              position: { lat: 23.780372082867956, lng: 90.40712748798454 },
+              map: map
+              });
+
+              circle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.25,
+              map: map,
+              center: marker1.getPosition(),
+              radius: 20,
+
+              });
+              marker2 = new google.maps.Marker({
+              position: { lat: 23.78355944048718,
+                lng: 90.35578779194697 },
+              map: map
+              });
+
+              circle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.25,
+              map: map,
+              center: marker2.getPosition(),
+              radius: 100,
+
+              });
+              marker3 = new google.maps.Marker({
+              position: { lat: 23.72857369603569,
+                lng: 90.42008391561156 },
+              map: map
+              });
+
+              circle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.25,
+              map: map,
+              center: marker3.getPosition(),
+              radius: 100,
+
+              });
+              marker4 = new google.maps.Marker({
+              position: { lat: 23.699384605092845,
+                lng: 90.4525066772414 },
+              map: map
+              });
+
+              circle = new google.maps.Circle({
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.25,
+              map: map,
+              center: marker4.getPosition(),
+              radius: 100,
+
+              });
 
       var yellowMarkerIcon = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
       var iconSize = new google.maps.Size(15, 15);
+   
+
 
 
 
@@ -75,6 +144,7 @@ function initMap() {
             // Set the map center to the selected location
             map.setCenter(locations[selectedValue]);
         });
+        
 
   // Retrieve markers from the server and add them to the map
   var xhr = new XMLHttpRequest();
@@ -92,6 +162,8 @@ function initMap() {
                       iconUrl = 'img/fire-extinguisher.png';
                   } else if (marker.marker_type == 'fire_station') {
                       iconUrl = 'img/fire-station.png';
+                  }else if (marker.marker_type == 'water') {
+                    iconUrl = 'img/water.png';
                   } else {
                       iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
                   }
@@ -139,7 +211,12 @@ function initMap() {
           }
       });
   }
-
+    // Create a button to show only water markers
+    var waterButton = document.createElement('button');
+    waterButton.textContent = 'Water';
+    waterButton.addEventListener('click', function() {
+        showMarkersByType('water');
+    });
 
     // Create a button to show only fire markers
     var fireButton = document.createElement('button');
@@ -226,10 +303,16 @@ function initMap() {
             openInfoWindow = infoWindow;
             return infoWindow;
         }
+
+
 	  
   }
   </script>
-  <script>           
+  <script>      
+
+
+
+
         function approveMarker(markerId, button) {
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', 'approve_marker.php');
@@ -301,11 +384,8 @@ function deleteMarker(id) {
         <option value="shonirakhra">Shonirakhra</option>
     </select>
 
-    <div id="search-bar">
-        
-        <input id="pac-input" type="search" class="controls" placeholder="Search Box" required>
-        
-        
-   </div> 
+    <!-- <div id="search-bar">
+        <input id="pac-input" type="search" class="controls" placeholder="Search Box" required>  
+   </div>  -->
 </body>
 </html>

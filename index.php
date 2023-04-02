@@ -38,7 +38,11 @@
                 lat: 23.780372082867956, lng: 90.40712748798454
                 //23.780372082867956, 90.40712748798454
             },
-            zoom: 15
+            zoom: 17,
+            mapId: 'f9e7749192dafd37',
+            //681e43a442509676
+            //f9e7749192dafd37
+		
         });
         marker1 = new google.maps.Marker({
               position: { lat: 23.780372082867956, lng: 90.40712748798454 },
@@ -108,7 +112,7 @@
 
               });
 
-                // Create the search box and link it to the UI element.
+        // Create the search box and link it to the UI element.
         const input = document.getElementById("pac-input");
         const searchBox = new google.maps.places.SearchBox(input);
 
@@ -174,8 +178,11 @@
             });
             map.fitBounds(bounds);
         });
-
         
+        //Ends Create the search box and link it to the UI element
+
+
+
         // Create a variable to hold the locations and their coordinates
         var locations = {
             brac: {
@@ -266,6 +273,7 @@
                 <option value="fire_extinguisher">Fire Extinguisher</option>
                 <option value="fire">Fire</option>
                 <option value="water">Water Resource</option>
+                <option value="water">Other Resource</option>
                 </select>
             </div>
 
@@ -275,6 +283,7 @@
             <input type="text" id="casualty" name="casualty" placeholder="Casualty" style="display: none;">
             <input type="tel" id="tel" name="tel" placeholder="tel/mobile number" style="display: none;">
             <input type="text" id="qty" name="qty" placeholder="quantity" style="display: none;">
+            <input type="text" id="Des" name="qty" placeholder="quantity" style="display: none;">
             </div>
 
 
@@ -318,6 +327,15 @@
                     markerInfoFields.querySelector('#casualty').style.display = 'none';
 
                 }
+                else if (markerTypeField.value === 'other') {
+                    markerInfoFields.querySelector('#fire_date').style.display = 'none';
+                    markerInfoFields.querySelector('#fire_time').style.display = 'none';
+                    markerInfoFields.querySelector('#casualty').style.display = 'none';
+                    markerInfoFields.querySelector('#tel').style.display = 'none';
+                    markerInfoFields.querySelector('#tel').style.display = 'block';
+                    markerInfoFields.querySelector('#qty').style.display = 'block';
+
+                }
             }
 
             // Add an event listener to the marker type field to listen for changes
@@ -352,7 +370,12 @@
             document.getElementById('success-msg').style.display = 'none';
         });
 
-
+         // Create a button to show only water markers
+        var waterButton = document.createElement('other');
+        waterButton.textContent = 'Other';
+        waterButton.addEventListener('click', function() {
+            showMarkersByType('other');
+        });
         // Create a button to show only water markers
         var waterButton = document.createElement('button');
         waterButton.textContent = 'Water';
@@ -412,6 +435,9 @@
                         } 
                         else if (marker.marker_type == 'water') {
                             iconUrl = 'img/water.png';
+                        }
+                        else if (marker.marker_type == 'other') {
+                            iconUrl = 'img/ladder.png';
                         }else {
                             iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
                         }
